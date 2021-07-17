@@ -4,7 +4,7 @@
 ---------
 
 # 👉🏻Introduction
-영양제 추천, 구독 사이트인 필리를 클론하였습니다. 
+영양제 추천, 구독 사이트 필리를 클론하였습니다. 
 - 기간 : 21.07.05 - 21.07.16
 - 구성 : Front-end 3명, Back-end 3명
 - [백엔드 깃헙주소](https://github.com/wecode-bootcamp-korea/22-1st-Villy-backend)
@@ -20,6 +20,11 @@
 # 👉🏻 Technologies
 ## All
 - Git, Github
+
+##Communication.
+- Slack
+- Trello
+
 ## Front-end
 - HTML
 - React
