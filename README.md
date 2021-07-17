@@ -21,7 +21,7 @@
 ## All
 - Git, Github
 
-##Communication.
+## Communication.
 - Slack
 - Trello
 
