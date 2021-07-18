@@ -1,5 +1,4 @@
 //category-filter-condition
-
 export const makeCondition = filterState => {
   const filterMatch = {
     bone: 1,

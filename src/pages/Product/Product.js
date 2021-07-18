@@ -1,8 +1,15 @@
+//코드 한줄 한줄 설명해보기 !
+
+//리액트에서 컴포넌트 요소를 불러올 때 해주어야하는 것
 import React, { Component } from 'react';
+// config라는 파일로 API 관리
 import { GET_PRODUCTS_API } from '../../config';
+
+//컴포넌트 요소
 import ProductCard from './ProductCard/ProductCard';
 import ProductCategory from './ProductCategory/ProductCategory';
 
+//공통으로 사용되는 기능
 import { makeCondition } from '../../utils/productUtils';
 
 import './Product.scss';
@@ -54,6 +61,7 @@ export class Product extends Component {
 
   fetchFiltering = () => {
     const query = makeCondition(this.state.filterState);
+
     fetch(`${GET_PRODUCTS_API}?${query}`)
       .then(res => res.json())
       .then(data => {
@@ -79,9 +87,6 @@ export class Product extends Component {
 
   render() {
     const { productCard } = this.state;
-
-    console.log(`this.props.history`, this.props.history.location.search);
-    // console.log(`this.state.filterState.name`, this.state.filterState[key]);
     return (
       <div className="Product">
         <header className="productHeader">
@@ -98,20 +103,18 @@ export class Product extends Component {
             <ProductCategory
               key={productCard.id}
               filtering={this.filtering}
-              // checked={this.state.checked}
-              makeCondition={this.makeCondition}
               handleCheckBox={this.handleCheckBox}
             />
           </form>
 
           <ul className="productList">
-            {productCard.map((product, idx) => (
+            {productCard.map((product, index) => (
               <ProductCard
-                key={idx}
+                key={index}
                 productCard={product}
-                index={idx}
+                index={index}
                 backgroundColor={
-                  BACKGROUNDCOLOR_LIST[idx % BACKGROUNDCOLOR_LIST.length]
+                  BACKGROUNDCOLOR_LIST[index % BACKGROUNDCOLOR_LIST.length]
                 }
                 changeProductCard={this.changeProductCard}
               />

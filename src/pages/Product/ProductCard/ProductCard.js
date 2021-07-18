@@ -20,8 +20,8 @@ export class ProductCard extends Component {
     event.preventDefault();
     const newProductCard = { ...this.props.productCard };
     newProductCard.cart_exist = true;
-
     this.props.changeProductCard(newProductCard, this.props.index);
+
     fetch(`${CARTLIST_API}`, {
       method: 'POST',
       headers: { Authorization: localStorage.getItem('access_token') },
