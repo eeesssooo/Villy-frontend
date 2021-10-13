@@ -38,9 +38,11 @@ export class Product extends Component {
 
   componentDidMount() {
     if (this.props.history.location.search) {
-      fetch(`${GET_PRODUCTS_API}${this.props.history.location.search}`, {
-        headers: { Authorization: localStorage.getItem('access_token') },
-      })
+      // fetch(`${GET_PRODUCTS_API}${this.props.history.location.search}`, {
+      //   headers: { Authorization: localStorage.getItem('access_token') },
+      // })
+
+      fetch(`${GET_PRODUCTS_API}`)
         .then(res => res.json())
         .then(data => {
           this.setState({
@@ -48,7 +50,7 @@ export class Product extends Component {
           });
         });
     } else
-      fetch(`${GET_PRODUCTS_API}`, {
+      fetch(`${GET_PRODUCTS_API}?`, {
         headers: { Authorization: localStorage.getItem('access_token') },
       })
         .then(res => res.json())
